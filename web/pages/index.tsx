@@ -76,7 +76,7 @@ const Home: NextPage = () => {
   ];
 
   return (
-    <Background>
+    <div>
       <Head>
         <title>Boilerplate Hállan</title>
         <meta name="description" content="Boilerplate mantido por Hállan" />
@@ -94,7 +94,7 @@ const Home: NextPage = () => {
       </Main>
 
       <Footer />
-    </Background>
+    </div>
   );
 };
 
