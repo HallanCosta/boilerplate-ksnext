@@ -1,0 +1,30 @@
+{
+  "name": "keystone-app",
+  "version": "1.0.1",
+  "private": true,
+  "scripts": {
+    "dev": "keystone dev",
+    "start": "keystone start",
+    "build": "keystone build",
+    "postinstall": "keystone postinstall",
+    "postbuild": "link-module-alias",
+    "prebuild": "command -v link-module-alias && link-module-alias clean || true"
+  },
+  "_moduleAliasIgnoreWarning": true,
+  "_moduleAliases": {
+    "@lists": "./dist/lists"
+  },
+  "dependencies": {
+    "@keystone-6/auth": "^4.0.0",
+    "@keystone-6/core": "^2.1.0",
+    "@keystone-6/fields-document": "^4.0.0",
+    "typescript": "^4.7.4"
+  },
+  "engines": {
+    "node": "^14.15 || ^16.13"
+  },
+  "devDependencies": {
+    "@types/module-alias": "^2.0.1",
+    "tsconfig-paths": "^4.1.0"
+  }
+}
