@@ -3,18 +3,15 @@ import { Container, Title, Text } from './styles';
 
 export type Props = AnchorHTMLAttributes<HTMLElement> & {
   title: string;
-  text: string;
-}
+  description: string;
+  url: string;
+};
 
-export function Card({ 
-  title, 
-  text, 
-  ...rest 
-}: Props) {
+export function Functionality({ title, description, url, ...rest }: Props) {
   return (
-    <Container href="https://nextjs.org/docs">
+    <Container href={url} {...rest}>
       <Title>{title} &rarr;</Title>
-      <Text>{text}</Text>
+      <Text>{description}</Text>
     </Container>
   );
 }
