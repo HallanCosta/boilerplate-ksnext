@@ -1,20 +1,24 @@
 import type { NextPage } from 'next';
-import Head from 'next/head';
-import { useEffect, useCallback, useState } from 'react';
+import Image from 'next/image';
+import { useEffect, useState } from 'react';
 import { gql } from '@apollo/client';
-import { keystoneAPI } from '../services/api';
 
-import { H1 } from '../components/atoms/H1';
-import { Anchor } from '../components/atoms/Anchor';
-import { Description } from '../components/atoms/Description';
-import { Main } from '../components/atoms/Main';
-import { Header } from '../components/molecules/Header';
-import { Footer } from '../components/molecules/Footer';
-import { Props as FunctionalityProps } from '../components/organisms/Functionality';
-import { Functionalities } from '../components/templates/Functionalities';
-import { Background } from '../components/atoms/Background';
+import { H1 } from '../../components/atoms/H1';
+import { Avatar } from '../../components/atoms/Avatar';
+import { Anchor } from '../../components/atoms/Anchor';
+import { Background } from '../../components/atoms/Background';
+import { Description } from '../../components/atoms/Description';
+import { Main } from '../../components/atoms/Main';
+import { Header } from '../../components/molecules/Header';
+import { Footer } from '../../components/molecules/Footer';
+import { Props as FunctionalityProps } from '../../components/organisms/Functionality';
+import { Functionalities } from '../../components/templates/Functionalities';
 
-const Home: NextPage = () => {
+import { keystoneAPI } from '../../services/api';
+
+import { AvatarBox } from './styles';
+
+export const Home: NextPage = () => {
   const [functionalities, setFunctionalities] = useState<FunctionalityProps[]>(
     []
   );
@@ -53,17 +57,17 @@ const Home: NextPage = () => {
   }
 
   return (
-    <div>
-      <Head>
-        <title>Boilerplate Hállan</title>
-        <meta name="description" content="Boilerplate mantido por Hállan" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+    <Background>
+      <Header />
 
       <Main>
         <H1 title="Bem vindo">
           <Anchor title="Acessar Github" href="#footer" />
         </H1>
+
+        <AvatarBox>
+          <Avatar />
+        </AvatarBox>
 
         <Description title="O que vem no boilerplate" />
 
@@ -71,7 +75,7 @@ const Home: NextPage = () => {
       </Main>
 
       <Footer />
-    </div>
+    </Background>
   );
 };
 
